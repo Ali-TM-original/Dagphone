@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator} from '@react-navigation/stack';
 import {
   DrawerItem,
   createDrawerNavigator,
@@ -9,6 +9,9 @@ import {
 import Animated from 'react-native-reanimated';
 import { Block, Button, Text } from 'expo-ui-kit';
 import { LinearGradient } from 'expo-linear-gradient';
+import { FontAwesome } from '@expo/vector-icons'; 
+
+
 
 // screens
 import Fact from './Screens/Fact'
@@ -25,12 +28,17 @@ const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
 const Screens = ({ navigation, style }) => {
+  
   return (
     <Animated.View style={[{flex:1, overflow:'hidden'}, style]}>
       <Stack.Navigator
         screenOptions={{
           headerTransparent: true,
           headerTitle: null,
+          animationEnabled:true,
+          transitionConfig: () => ({
+            ScreenOrientation
+          }),
           headerLeft: () => (
             <Button transparent onPress={() => navigation.openDrawer()}>
              <MaterialCommunityIcons name="hamburger" size={35} color="black" />
@@ -90,6 +98,12 @@ const DrawerContent = props => {
             labelStyle={{marginLeft:-15,color:'white'}}
             icon={()=><FontAwesome5 name="firefox" size={24} color="white" />}/>
         </Block>
+      </Block>
+      <Block flex={false}>
+        <DrawerItem
+          label="Powered-Dagpi"
+          labelStyle={{ color: 'white' }}
+        />
       </Block>
     </DrawerContentScrollView>
   );
