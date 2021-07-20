@@ -9,8 +9,6 @@ import {
 import Animated from 'react-native-reanimated';
 import { Block, Button, Text } from 'expo-ui-kit';
 import { LinearGradient } from 'expo-linear-gradient';
-import { FontAwesome } from '@expo/vector-icons'; 
-
 
 
 // screens
@@ -19,6 +17,7 @@ import Joke from "./Screens/Joke"
 import Pickup from "./Screens/Pickup"
 import Roast from "./Screens/Roast"
 import Yomama from "./Screens/Yomama"
+import PrivacyPolicy from "./Screens/PrivacyPolic"
 
 //Icons
 import { MaterialCommunityIcons, Entypo,FontAwesome5 } from '@expo/vector-icons'; 
@@ -50,6 +49,7 @@ const Screens = ({ navigation, style }) => {
         <Stack.Screen name="PickUps" component={Pickup} />
         <Stack.Screen name="Roasts" component={Roast} />
         <Stack.Screen name="YoMama Roasts" component={Yomama} />
+        <Stack.Screen name="Policy" component={PrivacyPolicy} />
       </Stack.Navigator>
     </Animated.View>
   );
@@ -97,14 +97,19 @@ const DrawerContent = props => {
             onPress={() => props.navigation.navigate("YoMama Roasts")}
             labelStyle={{marginLeft:-15,color:'white'}}
             icon={()=><FontAwesome5 name="firefox" size={24} color="white" />}/>
+            <DrawerItem
+            label="Privacy Policy"
+            onPress={() => props.navigation.navigate("Policy")}
+            labelStyle={{marginLeft:-15,color:'white'}}
+            icon={()=><FontAwesome5 name="firefox" size={24} color="white" />}/>            
         </Block>
       </Block>
       <Block flex={false}>
         <DrawerItem
-          label="Powered-Dagpi"
+          label="Powered by Dagpi"
           labelStyle={{ color: 'white' }}
-        />
-      </Block>
+        />         
+      </Block>      
     </DrawerContentScrollView>
   );
 };
