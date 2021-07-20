@@ -21,6 +21,7 @@ import PrivacyPolicy from "./Screens/PrivacyPolic"
 
 //Icons
 import { MaterialCommunityIcons, Entypo,FontAwesome5 } from '@expo/vector-icons'; 
+import { MaterialIcons } from '@expo/vector-icons'; 
 
 
 const Stack = createStackNavigator();
@@ -40,7 +41,7 @@ const Screens = ({ navigation, style }) => {
           }),
           headerLeft: () => (
             <Button transparent onPress={() => navigation.openDrawer()}>
-             <MaterialCommunityIcons name="hamburger" size={35} color="black" />
+             <MaterialCommunityIcons name="hamburger" size={35} color="white" />
             </Button>
           ),
         }}>
@@ -101,7 +102,7 @@ const DrawerContent = props => {
             label="Privacy Policy"
             onPress={() => props.navigation.navigate("Policy")}
             labelStyle={{marginLeft:-15,color:'white'}}
-            icon={()=><FontAwesome5 name="firefox" size={24} color="white" />}/>            
+            icon={()=><MaterialIcons name="policy" size={24} color="white" />}/>            
         </Block>
       </Block>
       <Block flex={false}>
