@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet} from 'react-native';
-import { Block, Text } from 'expo-ui-kit';
 import {NavigationContainer} from "@react-navigation/native"
 import Draw from './Drawer';
 
