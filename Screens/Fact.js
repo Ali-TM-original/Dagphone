@@ -13,7 +13,7 @@ import * as Clipboard from 'expo-clipboard';
 
 const Fact = () => {
 
-    const [Roast, setRoast] = useState('Cool Roasts')
+    const [Roast, setRoast] = useState('Loading.....')
     const [Loading, setLoading] = useState(false)
     const [Copied, setCopied] = useState(false)
 

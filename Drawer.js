@@ -32,6 +32,7 @@ const Screens = ({ navigation, style }) => {
   return (
     <Animated.View style={[{flex:1, overflow:'hidden'}, style]}>
       <Stack.Navigator
+        initialRouteName="YoMama Roasts"
         screenOptions={{
           headerTransparent: true,
           headerTitle: null,
